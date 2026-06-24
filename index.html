@@ -40,9 +40,7 @@
           </div>
         </div>
 
-        <div class="hero-shot">
-  <img src="images/saldosehat-beranda.png" alt="Tampilan aplikasi SaldoSehat" />
-</div>      </div>
+        <div class="app-carousel" aria-label="Tampilan aplikasi SaldoSehat"> <div class="carousel-frame"> <img id="appScreenshot" src="images/screenshot-beranda.png" alt="Tampilan Beranda SaldoSehat" /> </div> <div class="carousel-controls"> <button type="button" class="carousel-btn" onclick="prevScreenshot()" aria-label="Screenshot sebelumnya"> ‹ </button> <div class="carousel-dots" aria-label="Navigasi screenshot"> <button type="button" class="dot active" onclick="goScreenshot(0)" aria-label="Beranda"></button> <button type="button" class="dot" onclick="goScreenshot(1)" aria-label="Transaksi"></button> <button type="button" class="dot" onclick="goScreenshot(2)" aria-label="Dompet"></button> <button type="button" class="dot" onclick="goScreenshot(3)" aria-label="Target"></button> <button type="button" class="dot" onclick="goScreenshot(4)" aria-label="Pinjaman"></button> <button type="button" class="dot" onclick="goScreenshot(5)" aria-label="Tanya SaldoSehat"></button> </div> <button type="button" class="carousel-btn" onclick="nextScreenshot()" aria-label="Screenshot berikutnya"> › </button> </div> </div>      </div>
     </section>
 
     <section class="section">
@@ -98,6 +96,9 @@
         <a href="support.html">Dukungan</a>
       </div>
     </div>
-  </footer>
+  </footer
+
+  <script> const screenshots = [ { src: "images/screenshot-beranda.png", alt: "Tampilan Beranda SaldoSehat" }, { src: "images/screenshot-transaksi.png", alt: "Tampilan Transaksi SaldoSehat" }, { src: "images/screenshot-dompet.png", alt: "Tampilan Dompet SaldoSehat" }, { src: "images/screenshot-target.png", alt: "Tampilan Target SaldoSehat" }, { src: "images/screenshot-pinjaman.png", alt: "Tampilan Pinjaman SaldoSehat" }, { src: "images/screenshot-tanya.png", alt: "Tampilan Tanya SaldoSehat" } ]; let currentScreenshot = 0; function renderScreenshot() { const image = document.getElementById("appScreenshot"); const dots = document.querySelectorAll(".dot"); image.src = screenshots[currentScreenshot].src; image.alt = screenshots[currentScreenshot].alt; dots.forEach((dot, index) => { dot.classList.toggle("active", index === currentScreenshot); }); } function nextScreenshot() { currentScreenshot = (currentScreenshot + 1) % screenshots.length; renderScreenshot(); } function prevScreenshot() { currentScreenshot = (currentScreenshot - 1 + screenshots.length) % screenshots.length; renderScreenshot(); } function goScreenshot(index) { currentScreenshot = index; renderScreenshot(); } 
+  </script>
 </body>
 </html>
